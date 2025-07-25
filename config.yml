@@ -69,7 +69,6 @@ opening_books:
 #     max_depth: 16                       # Half move max depth. (Comment this line for max depth)
       names:                              # List of names of books to use if there is no specific book for the time control, white, black or chess960.
         - DefaultBook
-        - BackupBook
         - Third
 #   Use the same pattern for 'bullet', 'blitz', 'rapid', 'classical',
 #   'antichess', 'atomic', 'chess960', 'crazyhouse', 'horde', 'kingofthehill', 'racingkings' and '3check' as well.
@@ -94,7 +93,7 @@ online_moves:
     priority: 200                         # Priority with which this move source is used. Higher priority is used first.
     only_without_book: true              # Whether the cloud should only be used if there is no matching book.
     min_eval_depth: 10                    # Minimum evaluation depth.
-    min_time: 1                          # Time the bot must have at least to use the online move. +10 seconds in games without increment.
+    min_time: 10                          # Time the bot must have at least to use the online move. +10 seconds in games without increment.
     timeout: 5                            # Time the server has to respond.
 #   max_depth: 16                         # Half move max depth. (Comment this line for max depth)
 #   max_moves: 1                          # Max number of moves played from Lichess cloud eval. (Comment this line for max moves)
@@ -111,10 +110,10 @@ online_moves:
   online_egtb:
     enabled: true                        # Activate online endgame tablebases from Lichess.
     min_time: 1                           # Time the bot must have at least to use the online move. +10 seconds in games without increment.
-    timeout: 3                            # Time the server has to respond.
+    timeout: 1                            # Time the server has to respond.
 
 offer_draw:
-  enabled: true                           # Activate whether the bot should offer draw.
+  enabled: false                           # Activate whether the bot should offer draw.
   score: 10                               # If the absolute value of the score is less than or equal to this value, the bot offers/accepts draw (in cp)
   consecutive_moves: 10                   # How many moves in a row the absolute value of the score has to be below the draw value
   min_game_length: 35                     # Earliest move in which draw is offered.
@@ -199,6 +198,4 @@ messages:
 
 books:
   DefaultBook: "./engines/Book2.bin"
-  BackupBook: "./engines/Book3.bin"
-  Third: "./engines/book.bin"
-
+  Third: "./engines/Book3.bin"
