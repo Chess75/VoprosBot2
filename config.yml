@@ -65,11 +65,12 @@ opening_books:
 #     names:                              # List of names of books to use as black.
 #       - BlackBook
     standard:
-      selection: best_move         # Move selection is one of "weighted_random", "uniform_random" or "best_move".
+      selection: best_move        # Move selection is one of "weighted_random", "uniform_random" or "best_move".
 #     max_depth: 16                       # Half move max depth. (Comment this line for max depth)
       names:                              # List of names of books to use if there is no specific book for the time control, white, black or chess960.
         - DefaultBook
         - Third
+        - OptBook
 #   Use the same pattern for 'bullet', 'blitz', 'rapid', 'classical',
 #   'antichess', 'atomic', 'chess960', 'crazyhouse', 'horde', 'kingofthehill', 'racingkings' and '3check' as well.
 #   Append '_white' or '_black' to use the books only as the specific color.
@@ -103,7 +104,7 @@ online_moves:
     only_without_book: false              # Whether the chessdb should only be used if there is no matching book.
     min_candidates: 5                     # Minimum number of candidate moves.
     min_time: 20                          # Time the bot must have at least to use the online move. +10 seconds in games without increment.
-    timeout: 5                            # Time the server has to respond.
+    timeout: 1                            # Time the server has to respond.
     selection: "best"                     # Move selection is one of "optimal", "best" or "good".
     max_depth: 30                         # Half move max depth. (Comment this line for max depth)
 #   max_moves: 1                          # Max number of moves played from chessdb. (Comment this line for max moves)
@@ -199,3 +200,4 @@ messages:
 books:
   DefaultBook: "./engines/Book2.bin"
   Third: "./engines/Book3.bin"
+  OptBook: "./engines/OptBook.bin"
